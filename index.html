@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="venedicus portfolio">
+  <title>venedicus | portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#dashboard">Skip to dashboard</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">tui://portfolio</div>
+      <div class="topbar-meta" data-i18n="topbar.mode">~ режим: нормальный</div>
+      <div class="topbar-right">
+        <div class="lang-switcher" aria-label="Language / Язык">
+          <button class="lang-btn active" id="btnRu" data-lang="ru" aria-pressed="true">RU</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" id="btnEn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <div class="clock" id="clock" aria-live="off">00:00</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap dashboard" id="dashboard">
+
+    <!-- PROFILE -->
+    <section class="panel panel-profile screen-block" id="profile" tabindex="0">
+      <div class="panel-head head-magenta" data-i18n="profile.head">ПРОФИЛЬ</div>
+      <p class="name-glitch glitch" data-text="Кирилл / venedicus" data-i18n="profile.name">Кирилл / venedicus</p>
+      <div class="kv-list">
+        <div><span data-i18n="kv.location">город</span><b data-i18n="kv.location.val">Санкт-Петербург</b></div>
+        <div><span data-i18n="kv.edu">образование</span><b data-i18n="kv.edu.val">2023–2027 / бакалавриат</b></div>
+        <div><span data-i18n="kv.focus">интересы</span><b data-i18n="kv.focus.val">Go, Backend, DevOps, GameDev</b></div>
+        <div><span data-i18n="kv.lang">языки</span><b data-i18n="kv.lang.val">рус. (родной) / англ. (технический)</b></div>
+      </div>
+      <div class="contacts-list profile-contacts">
+        <a href="https://t.me/venedicus" target="_blank" rel="noopener noreferrer">
+          <span class="icon">#</span><span>telegram</span><span>@venedicus</span>
+        </a>
+        <a href="mailto:venedicus@yandex.ru">
+          <span class="icon">#</span><span>email</span><span>venedicus@yandex.ru</span>
+        </a>
+        <a href="https://github.com/venedicus" target="_blank" rel="noopener noreferrer">
+          <span class="icon">#</span><span>github</span><span>github.com/venedicus</span>
+        </a>
+      </div>
+      <button id="diagnosticsBtn" class="cmd-btn" type="button">./run_diagnostics.sh</button>
+    </section>
+
+    <div class="dashboard-main">
+      <!-- PROJECTS -->
+      <section class="panel panel-projects screen-block" id="projects" tabindex="0">
+        <div class="panel-head-row">
+          <div class="panel-head head-green" data-i18n="projects.head">ПРОЕКТЫ</div>
+          <button type="button" class="mode-toggle" id="projectsModeBtn" aria-pressed="false" data-i18n="projects.toggle">[v] verbose: выкл</button>
+        </div>
+        <div class="table" id="projectsTable">
+
+          <article class="row">
+            <div class="name">imgbrd</div>
+            <div class="desc" data-i18n="p1.desc">движок имиджборды на Go</div>
+            <div class="tags">[go] [sqlite] [backend]</div>
+            <div class="more" data-i18n="p1.more">Слоистая архитектура Handler → Service → Repository. FTS5, SHA-256 дедупликация медиа, admin API, webhooks, RSS.</div>
+            <a href="https://github.com/venedicus/imgbrd" target="_blank" rel="noopener noreferrer">-> view</a>
+          </article>
+
+          <article class="row">
+            <div class="name">VAdlp</div>
+            <div class="desc" data-i18n="p2.desc">кроссплатформенный GUI для yt-dlp</div>
+            <div class="tags">[go] [fyne] [desktop]</div>
+            <div class="more" data-i18n="p2.more">Desktop: live-превью командной строки, асинхронная очередь загрузок, пресеты, авто-установщик зависимостей. Tokyo Night.</div>
+            <a href="https://github.com/venedicus/VAdlp" target="_blank" rel="noopener noreferrer">-> view</a>
+          </article>
+
+          <article class="row">
+            <div class="name" data-i18n="p3.name">ЭЛЕМЕР-КТ-200К</div>
+            <div class="desc" data-i18n="p3.desc">симулятор промышленного прибора</div>
+            <div class="tags">[unity] [c#] [simulation]</div>
+            <div class="more" data-i18n="p3.more">Симулятор калибратора ЭЛЕМЕР-КТ-200К для кафедры: логика прибора и состояния измерений; UI по физической панели.</div>
+            <span class="no-link" data-i18n="p3.link">// закрытый</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section class="panel panel-stack screen-block" id="stack" tabindex="0">
+        <div class="panel-head head-cyan" data-i18n="stack.head">СТЕК</div>
+        <div class="stack-list">
+          <div class="stack-item">
+            <span class="stack-tag tag-cyan">[langs]</span>
+            <span class="stack-desc" data-i18n="stack.langs">Go, C#, Bash, Python</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-tag tag-cyan">[backend]</span>
+            <span class="stack-desc" data-i18n="stack.backend">REST API, CLI/TUI, слоистая архитектура, MVC</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-tag tag-green">[data]</span>
+            <span class="stack-desc" data-i18n="stack.data">PostgreSQL, SQLite, основы проектирования БД</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-tag tag-green">[devops]</span>
+            <span class="stack-desc" data-i18n="stack.devops">Linux (Debian, Arch, Astra, WSL), Docker, Git, nginx/Apache, self-hosted</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-tag tag-magenta">[.net/c#]</span>
+            <span class="stack-desc" data-i18n="stack.dotnet">прикладная логика, инструменты</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-tag tag-yellow">[unity]</span>
+            <span class="stack-desc" data-i18n="stack.unity">Unity, геймдизайн, симуляции</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="statusline" aria-hidden="true">
+    <div class="status-left">
+      <span class="status-block bg-magenta" data-i18n="status.mode">НОРМАЛЬНЫЙ</span>
+      <span class="status-block bg-dark">index.html</span>
+    </div>
+    <div class="status-right">
+      <span data-i18n="status.v">[v] verbose</span>
+      <span data-i18n="status.d">[d] диагностика</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>

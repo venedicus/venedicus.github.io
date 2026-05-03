@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">tui://portfolio</div>
+      <div class="topbar-meta">~ mode: error</div>
+      <div class="clock" aria-live="off">ERR</div>
+    </div>
+  </header>
+
+  <main class="wrap dashboard error-layout">
+    <section class="panel panel-error" tabindex="0">
+      <div class="panel-head head-magenta"> ERROR.LOG </div>
+      <h1 class="glitch" data-text="404 // NOT FOUND">404 // NOT FOUND</h1>
+      <p class="muted">kernel panic: page missing</p>
+      <p class="line">Запрошенный модуль не существует или был перемещен.</p>
+      
+      <div class="log-line"><span class="log-err">[ERR]</span> route mapping failed</div>
+      <div class="log-line"><span class="log-sys">[SYS]</span> dropping session...</div>
+      <br>
+      <a href="./index.html" class="cmd-btn" style="text-align: center; display: block;">cd ~/portfolio && ./start.sh</a>
+    </section>
+  </main>
+</body>
+</html>
