@@ -50,7 +50,6 @@ body::before {
 
 .wrap { width: var(--content); margin-inline: auto; }
 
-/* ── Topbar ──────────────────────────────────────────── */
 .topbar {
   padding: 0.8rem 0;
   border-bottom: 2px solid var(--panel);
@@ -72,7 +71,6 @@ body::before {
 .topbar-right { display: flex; align-items: center; gap: 1.2rem; }
 .clock { color: var(--cyan); font-family: "VT323", monospace; font-size: 1.3rem; }
 
-/* ── Lang switcher ───────────────────────────────────── */
 .lang-switcher { display: flex; align-items: center; gap: 0.4rem; }
 .lang-sep { color: var(--border); font-size: .8rem; }
 .lang-btn {
@@ -90,7 +88,6 @@ body::before {
 .lang-btn.active { color: var(--magenta); font-weight: 600; }
 .lang-btn:focus { outline: 1px solid var(--magenta); outline-offset: 2px; }
 
-/* ── Dashboard — two-column TUI layout ───────────────── */
 .dashboard {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -101,8 +98,6 @@ body::before {
   align-items: start;
 }
 
-/* TUI: слева профиль (одна «колонка» без grid-row span), справа столбец
-   проекты → стек — высоты строк справа не привязаны к высоте профиля */
 .panel-profile {
   grid-column: 1 / 5;
 }
@@ -120,7 +115,6 @@ body::before {
   width: 100%;
 }
 
-/* Центрированный лэйаут 404: flex перебивает grid у .dashboard, align-self у .panel сбрасываем */
 .dashboard.error-layout {
   display: flex;
   align-items: center;
@@ -137,7 +131,6 @@ body::before {
   box-shadow: 0 0 15px rgba(247, 118, 142, 0.1);
 }
 
-/* ── Panel base ──────────────────────────────────────── */
 .panel {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -154,7 +147,6 @@ body::before {
   z-index: 2;
 }
 
-/* ── Panel headers ───────────────────────────────────── */
 .panel-head {
   display: inline-block;
   align-self: flex-start;
@@ -173,13 +165,10 @@ body::before {
 
 .panel-head-row { display: flex; justify-content: space-between; align-items: flex-start; }
 
-/* ── Profile panel ───────────────────────────────────── */
-
 .panel-profile .name-glitch {
   margin-bottom: 1rem;
 }
 
-/* Name with glitch — same size as body text */
 .name-glitch {
   margin: 0 0 0.3rem;
   font-size: 1rem;
@@ -190,7 +179,6 @@ body::before {
   line-height: 1.4;
 }
 
-/* Glitch pseudo-elements (shared with h1.glitch in 404) */
 .glitch::before, .glitch::after {
   content: attr(data-text);
   position: absolute;
@@ -208,7 +196,6 @@ body::before {
   animation: glitchB 5s linear infinite;
 }
 
-/* h1 kept for 404 page */
 h1 {
   margin: 0 0 0.5rem 0;
   font-family: "VT323", monospace;
@@ -269,7 +256,6 @@ h1 {
   outline: none;
 }
 
-/* ── Log lines (404, внешний вид как в старом styles) ─── */
 .log-line {
   font-size: .85rem;
   padding: .3rem 0;
@@ -281,7 +267,6 @@ h1 {
 .log-sys { color: var(--magenta); font-weight: 600; margin-right: .5rem; }
 .log-err { color: var(--pink); font-weight: 600; margin-right: .5rem; }
 
-/* ── Stack panel ─────────────────────────────────────── */
 .stack-list { display: flex; flex-direction: column; gap: .5rem; }
 .stack-item { display: flex; align-items: baseline; gap: .8rem; font-size: .85rem; }
 .stack-tag  { font-weight: 600; font-size: .8rem; min-width: 88px; flex-shrink: 0; }
@@ -292,7 +277,6 @@ h1 {
 .tag-magenta { color: var(--magenta); }
 .tag-yellow  { color: var(--yellow); }
 
-/* ── Projects panel ──────────────────────────────────── */
 .table { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
 
 .row {
@@ -324,7 +308,6 @@ h1 {
 .row a:hover { color: var(--text); }
 .no-link    { color: var(--text-dark); font-size: .85rem; font-style: italic; white-space: nowrap; }
 
-/* Verbose mode */
 .table.verbose .row {
   grid-template-columns: minmax(110px, auto) 1fr minmax(130px, auto) auto;
   row-gap: .4rem;
@@ -354,7 +337,6 @@ h1 {
 .mode-toggle:hover, .mode-toggle:focus { color: var(--text); outline: none; }
 .mode-toggle[aria-pressed="true"] { color: var(--green); }
 
-/* ── Status bar ──────────────────────────────────────── */
 .statusline {
   margin-top: auto;
   padding: 0.5rem 0;
@@ -371,7 +353,6 @@ h1 {
 .bg-dark      { background: var(--text-dark); color: var(--bg-darker); }
 .status-right { display: flex; gap: 1rem; color: var(--text-dark); }
 
-/* ── Toast ───────────────────────────────────────────── */
 .toast {
   position: fixed;
   right: 2rem; bottom: 3rem;
@@ -388,7 +369,6 @@ h1 {
 }
 .toast.show { opacity: 1; transform: translateX(0); }
 
-/* ── Animations ──────────────────────────────────────── */
 @keyframes glitchA {
   0%, 92%, 100% { transform: translate(0, 0); }
   94%           { transform: translate(-2px, 2px); }
@@ -398,7 +378,6 @@ h1 {
   90%           { transform: translate(2px, -2px); }
 }
 
-/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .dashboard-main { display: contents; }
 
@@ -414,7 +393,6 @@ h1 {
   .panel-stack,
   .panel-projects { grid-column: 1 / -1; grid-row: auto; }
 
-  /* Исходный порядок блоков: профиль → стек → проекты (DOM: профиль, проекты, стек) */
   .panel-profile  { order: 1; }
   .panel-stack    { order: 2; }
   .panel-projects { order: 3; }
